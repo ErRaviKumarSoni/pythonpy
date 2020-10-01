@@ -220,9 +220,21 @@ Ignore AttributeErrors if they pop up with (--i)
 Get the local network ip
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+::For real or complex numbers
 
   $ ifconfig | py -x --i 're.search(r"192\.168[\d\.]+", x).group()'
   192.168.1.41
 
-::
+::# Find square root of real or complex numbers
+# Importing the complex math module
+import cmath
+
+num = 1+2j
+
+# To take input from the user
+#num = eval(input('Enter a number: '))
+
+num_sqrt = cmath.sqrt(num)
+print('The square root of {0} is {1:0.3f}+{2:0.3f}j'.format(num ,num_sqrt.real,num_sqrt.imag))
+
+The square root of (1+2j) is 1.272+0.786j
